@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{verbatim}
+\usepackage{fullpage}
+\usepackage{mathrsfs}
+\usepackage{authblk}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage[nottoc,notlof,notlot,numbib]{tocbibind}
+\usepackage{xr-hyper}
+
+\date{}
+\frenchspacing
+\title{$title$}
+
+% Insert Author names, affiliations and corresponding author email.
+$for(author)$
+\author[$author.affiliation$]{$author.given$ $author.family$}
+$endfor$
+
+$for(organization)$
+\affil[$organization.id$]{$organization.name$, $organization.address$}
+$endfor$
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+$body$
+
+\end{document}
