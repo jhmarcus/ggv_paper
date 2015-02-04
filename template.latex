@@ -17,7 +17,7 @@ $for(author)$
 $endfor$
 
 $for(organization)$
-\affil[$organization.id$]{$organization.name$, $organization.address$}
+\affil[$organization.id$]{\small{$organization.name$, $organization.address$}}
 $endfor$
 
 \begin{document}
