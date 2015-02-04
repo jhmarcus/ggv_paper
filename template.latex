@@ -6,12 +6,6 @@
 \usepackage{authblk}
 \usepackage{graphicx}
 \usepackage{caption}
-\usepackage{cite}
-\usepackage{subcaption}
-\usepackage{mathtools}
-\usepackage{multirow}
-\usepackage[nottoc,notlof,notlot,numbib]{tocbibind}
-\usepackage{xr-hyper}
 
 \date{}
 \frenchspacing
