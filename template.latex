@@ -13,7 +13,7 @@
 
 % Insert Author names, affiliations and corresponding author email.
 $for(author)$
-\author[$author.affiliation$]{$author.given$ $author.family$}
+\author[$author.affiliation$]{$author.name$\thanks{$author.email$}$$^,$$}
 $endfor$
 
 $for(organization)$
@@ -26,6 +26,8 @@ $endfor$
 \begin{abstract}
 $abstract$
 \end{abstract}
+
+\newpage
 
 $body$
 
