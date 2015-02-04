@@ -6,6 +6,8 @@
 \usepackage{authblk}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{lineno}
+\linenumbers
 
 \date{}
 \frenchspacing
