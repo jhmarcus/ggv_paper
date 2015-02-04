@@ -1,15 +1,9 @@
 MANUSCRIPT = ggv
-TEX = pdflatex -interaction nonstopmode
-BIB = bibtex
 
 all: $(MANUSCRIPT).pdf
 
-clean::
-	rm -fv *.pdf *.aux *.log *.bbl *.blg *.toc *.out *.lot *.lof *.gz
+clean: $(MANUSCRIPT).pdf
+	rm $(MANUSCRIPT).pdf
 
-$(MANUSCRIPT).pdf: $(MANUSCRIPT).tex $(MANUSCRIPT).bib
-	$(TEX) $(MANUSCRIPT)
-	$(BIB) $(MANUSCRIPT)
-
-
-
+$(MANUSCRIPT).pdf: $(MANUSCRIPT).md
+	pandoc --filter pandoc-citeproc -S --standalone $(MANUSCRIPT).md --template=plos-one.latex -o $(MANUSCRIPT).pdf
