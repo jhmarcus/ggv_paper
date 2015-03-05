@@ -2,7 +2,6 @@
 \usepackage{amssymb,amsmath,amsthm}
 \usepackage{verbatim}
 \usepackage{fullpage}
-\usepackage{mathrsfs}
 \usepackage{authblk}
 \usepackage{graphicx}
 \usepackage{caption}
