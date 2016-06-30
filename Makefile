@@ -1,9 +1,10 @@
-MANUSCRIPT = ggv
-
-all: $(MANUSCRIPT).pdf
+paper.pdf: paper.Rmd
+	R -e "rmarkdown::render('paper.Rmd')"
+	open paper.pdf
 
 clean:
-	rm $(MANUSCRIPT).pdf
+	rm paper.tex
+	rm paper.pdf
 
-$(MANUSCRIPT).pdf: $(MANUSCRIPT).md template.latex
-	pandoc --filter pandoc-citeproc -S --standalone $(MANUSCRIPT).md --template=template.latex -o $(MANUSCRIPT).pdf
+open:
+	open paper.pdf
