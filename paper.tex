@@ -127,13 +127,13 @@ frequency \(\leq .05\)) can be particularly informative in determining
 an individual's ancestry. Rare variants tend to be localized in small
 geographic regions because they have arisen recently in human history
 and have had little time to spread across populations through migration
-{[}4{]}, {[}5{]}. Thus by surveying the collection of rare variants that
-an individual carries provides information about the population origins
-of that individual's recent ancestors. One of us (J.N.) recently took
-advantage of the geographic clustering of an individual's rare variants
-in helping to reaffirm the historically highly contested Native American
-ancestry of the Kennewick Man, an ancient individual from Washington
-State \textbf{???}.
+events {[}4{]}, {[}5{]}. Thus by surveying the collection of rare
+variants that an individual carries provides information about the
+population origins of that individual's recent ancestors. One of us
+(J.N.) recently took advantage of the geographic clustering of an
+individual's rare variants in helping to reaffirm the historically
+highly contested Native American ancestry of the Kennewick Man, an
+ancient individual from Washington State \textbf{???}.
 
 Contemporary population genetics researchers are also faced with the
 challenge of large, high dimensional datasets. For example, is not
@@ -334,8 +334,8 @@ label, sample size, and frequency scale. Genetic variants can be queried
 by chromosome position, rsid, or randomly. Example HTTP requests and
 json response can be seen below:
 
-\subsection*{Query API by rsid}\label{query-api-by-rsid}
-\addcontentsline{toc}{subsection}{Query API by rsid}
+\subsection*{Query by rsid}\label{query-by-rsid}
+\addcontentsline{toc}{subsection}{Query by rsid}
 
 \begin{verbatim}
 http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&rsID=rs1834640
@@ -355,9 +355,9 @@ http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&rs
 ]
 \end{verbatim}
 
-\subsection*{Query API by chromosome
-position}\label{query-api-by-chromosome-position}
-\addcontentsline{toc}{subsection}{Query API by chromosome position}
+\subsection*{Query by chromosome
+position}\label{query-by-chromosome-position}
+\addcontentsline{toc}{subsection}{Query by chromosome position}
 
 \begin{verbatim}
 http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&chr=14&pos=37690093
@@ -377,8 +377,8 @@ http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&ch
 ]
 \end{verbatim}
 
-\subsection*{Randomly query API}\label{randomly-query-api}
-\addcontentsline{toc}{subsection}{Randomly query API}
+\subsection*{Random query}\label{random-query}
+\addcontentsline{toc}{subsection}{Random query}
 
 \begin{verbatim}
 http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&random_snp=True
