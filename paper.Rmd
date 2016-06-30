@@ -51,7 +51,7 @@ The Geography of Genetic Variants browser (GGV) uses the SVG and mapping utiliti
 In order to allow for easy access to large commonly used public genomic datasets, such as the 1000 Genomes project, Human Genome Diversity project and POPRES project, we have developed an SQL database and RESTful API for querying allele frequencies by chromosome and position or reference SNP identifier [Figure 1]. 
 
 ```{r figure1, echo=FALSE, message=FALSE, fig.height=5, fig.width=5, fig.align='center', fig.cap='Figure caption'}
-img <- readPNG("figures/figure1.png")
+img <- readPNG("figures/png/figure1.png")
 grid.raster(img)
 ```
 
@@ -59,16 +59,36 @@ Users can query single variants by chromosome and position identifiers, by rsids
 
 After a query, the GGV displays the frequency of a variant in a given population as a pie chart where each slice represents minor and major allele frequencies. Pie charts are displayed as points positioned at the population's region of origin where the projection/map-view is chosen based off of the geographic proximity of populations present in a given dataset [Figure 2]. 
 
+```{r figure2, echo=FALSE, message=FALSE, fig.height=5, fig.width=5, fig.align='center', fig.cap='Figure caption'}
+img <- readPNG("figures/png/figure2.png")
+grid.raster(img)
+```
+
 # Representing variable certainty in frequency data {-}
 One under-appreciated problem with allele frequency maps is that not all data points have equal levels of certainty. For some locations, sample sizes are small, and the reported allele frequency may be quite far from the true population frequency due to sampling error. To address this issue, we use varying transparency in a population's pie chart: sample allele frequencies with higher levels of sampling error will be made more transparent, and hence less visible on the map [Figure 3].   
+
+```{r figure3, echo=FALSE, message=FALSE, fig.height=6, fig.width=6, fig.align='center', fig.cap='Figure caption'}
+img <- readPNG("figures/png/figure3.png")
+grid.raster(img)
+```
 
 # Representing rare variants in frequency data {-}
 An additional challenge is that allele frequencies between variants often differ greatly, sometimes by orders of magnitude in a single dataset. This has not been an pervasive problem until recently, as most population genetic samples were based on genotype arrays biased towards variants that are common in human populations (5-50% in minor allele frequency). With the advent of next generation sequencing technologies and large samples of thousands of individuals, it is common for datasets to contain rare variants @10002015global, @nelson2012abundance, @tennessen2012evolution. 
 
 In current visualization schemes, such as the HGDP Selection Browser, rare variants would be represented as narrow slivers in a pie chart, nearly invisible to the naked eye. To address this challenge we re-scale frequencies for rare variants, so that small frequencies become visible. Specifically, we will use a “frequency scale” that is indicated below the map, and redundantly using color, that will indicate a constant scale for the frequencies displayed [Figure 4]. Much like scientific notation, this allows a wide range of frequencies to be displayed].
 
+```{r figure4, echo=FALSE, message=FALSE, fig.height=6, fig.width=6, fig.align='center', fig.cap='Figure caption'}
+img <- readPNG("figures/png/figure4.png")
+grid.raster(img)
+```
+
 # Interface features {-}
 In many datasets where populations are sampled densely in geographic space, one problem is that allele frequency plots begin to overlap each other and obscure information. To address this issue, we use force-directed layouts of the populations such that no two points are overlapping each other, and yet the points will be pulled towards their true origins. Lines anchoring the points visibly to their original sampling locations will be used to make sure true sampling locations are indicated [Figure 5].
+
+```{r figure5, echo=FALSE, message=FALSE, fig.height=6, fig.width=6, fig.align='center', fig.cap='Figure caption'}
+img <- readPNG("figures/png/figure5.png")
+grid.raster(img)
+```
 
 # Underlying Frequency API {-}
 [Joe - worth saying more about the API structure and giving example calls and structure of JSON?]
