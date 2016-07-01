@@ -23,5 +23,5 @@ brew install inkscape
 * add another example for HGDP selection browser
 * cite kennewick man report
 * cite svg icons for figure1
-* reorder position of figures
 * phrasing issue - does a variant have a geographic distribution or allele i.e. variants don't have frequencies its alleles / genotypes do
+* is interface features the right section header

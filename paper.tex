@@ -128,19 +128,19 @@ frequency \(\leq .05\)) can be particularly informative in determining
 an individual's ancestry. Rare variants tend to be localized in small
 geographic regions because they have arisen recently in human history
 and have had little time to spread across populations through migration
-events {[}4{]}, {[}5{]}. Thus by surveying the collection of rare
-variants that an individual carries provides information about the
-population origins of that individual's recent ancestors. One of us
-(J.N.) recently took advantage of the geographic clustering of an
-individual's rare variants in helping to reaffirm the historically
-highly contested Native American ancestry of the Kennewick Man, an
-ancient individual from Washington State \textbf{???}.
+events {[}4{]}, {[}5{]}. By surveying the collection of rare variants
+that an individual carries one can gain insight into the geographic
+origins of that individual's recent ancestors. One of us (J.N.) recently
+took advantage of the geographic localization of an individual's rare
+variants in helping to reaffirm the historically-highly contested Native
+American ancestry of the Kennewick Man, an ancient individual from
+Washington State \textbf{???}.
 
 Contemporary population genetics researchers are also faced with the
 challenge of large, high dimensional datasets. For example, is not
 uncommon for a researcher in human genetics to have a dataset comprised
 of thousands of individuals measured at hundreds of thousands or even
-millions of single nucleotide vairants (SNVs). One common approach to
+millions of single nucleotide variants (SNVs). One common approach to
 visualizing such high-dimensional data is to compress the SNV dimensions
 down to a small number of latent factors, using a method such as
 principal components analysis {[}6{]}, {[}7{]}, a model-based clustering
@@ -162,10 +162,10 @@ Our work is inspired by past tools such as the ALFRED database {[}11{]}
 and the maps available on the HGDP Selection browser {[}12{]}. One of us
 (J.N.) developed the scripts for the HGDP Selection Browser maps using
 The Generic Mapping Tools (GMT) {[}13{]}, a powerful system of
-geographic plotting scripts with a sbustantial learning curve. The plots
+geographic plotting scripts with a substantial learning curve. The plots
 from the HGDP Selection Browser have proved useful, and have appeared in
 research articles e.g {[}12{]}, {[}14{]}, books e.g. {[}15{]}, and have
-been ported and made avialable on the UCSC Genome Browser (available
+been ported and made available on the UCSC Genome Browser (available
 under the HGDP Allele Freq track of the browser).
 
 Reference datasets for population genetic variation has greatly expanded
@@ -327,7 +327,7 @@ indicated {[}Figure 5{]}.
 
 To interface population minor allele frequency data stored in the SQL
 database with the front-end D3.js visualization we use a REST API
-impelemented in the python library Flask-RESTful \textbf{???}. GET
+implemented in the python library Flask-RESTful \textbf{???}. GET
 requests are submitted to the database via HTTP, returning json
 formatted allele frequency data and the meta-data associated with each
 population and genetic variant e.g.~latitude, longitude, population
@@ -405,7 +405,7 @@ http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&ra
 A major challenge of using a geographic representation of genetic
 variation in humans is that the samples must be associated with a
 geographic location. While doing so is generally immensely helpful, it
-has inherent complexity. For example, pracitioners must make choices
+has inherent complexity. For example, practitioners must make choices
 regarding representing where an individual was sampled for the study
 (e.g.~the city of a major research center) or choosing a location that
 is more representative of an individual's ancestral origins (e.g.~as
@@ -435,6 +435,8 @@ Novembre Lab for supportive conversations.
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
+
+\setlength\parindent{0pt}
 
 \hypertarget{refs}{}
 \hypertarget{ref-rosenberg2010genome}{}
