@@ -20,7 +20,7 @@ brew install inkscape
 * double check @furchedata citation
 * double check @wessel2013generic citation
 * double check @meyer2012high citation
-* fill in citations
 * add another example for HGDP selection browser
 * cite kennewick man report
 * cite svg icons for figure1
+* reorder position of figures

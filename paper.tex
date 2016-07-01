@@ -101,9 +101,10 @@ divergence). For these reasons, visual inspection of geographic maps for
 genetic variants is common practice in genetic studies. Here we develop
 an interactive visualization tool for illuminating the geographic
 distribution of genetic variants. Through an efficient REST API and
-dynamic front-end the Geography of Genetic Variants (GGV) browser
-rapidly provides maps of allele frequencies in populations distributed
-across the globe.
+dynamic front-end the
+\href{popgen.uchicago.edu/ggv}{\textit{Geography of Genetic Variants (GGV)}}
+browser rapidly provides maps of allele frequencies in populations
+distributed across the globe.
 
 \section*{Introduction}\label{introduction}
 \addcontentsline{toc}{section}{Introduction}
@@ -201,7 +202,7 @@ variant.
 
 }
 
-\caption[Schematic diagram of the Geography of Genetic Variants (GGV) web application]{Schematic diagram of the Geography of Genetic Variants (GGV) web application. We compute minor allele frequencies from publicly available population genetic datasets from the 1000 Genomes Project, Human Genom Diversity Project (HGDP) and Population Reference Sample (POPRES). These allele freqeuncies are stored in a SQL database along side with geographic coordinates associated with each population. The front-end visualization was created using d3 and accesses allele frequency and population meta-data from a REST API implemented in the python library flask.}\label{fig:figure1}
+\caption[Schematic diagram of the Geography of Genetic Variants (GGV) web application]{Schematic diagram of the Geography of Genetic Variants (GGV) web application. We compute minor allele frequencies from publicly available population genetic datasets from the 1000 Genomes Project, Human Genome Diversity Project (HGDP) and Population Reference Sample (POPRES). These allele frequencies are stored in a SQL database along side with geographic coordinates associated with each population. The front-end visualization was created using d3 and accesses allele frequency and population meta-data from a REST API implemented in the python library flask.}\label{fig:figure1}
 \end{figure}
 \end{CodeChunk}
 
@@ -229,7 +230,7 @@ highly visual way for learners to understand human genetic variation.
 
 }
 
-\caption[Example map from the Geography of Genetic Variants web application]{Example map from the Geography of Genetic Variants web application. Each pie chart represents a population with the blue slice of the pie displaying the freqeuncy of the global minor allele and the yellow slice of the pie displaying the frequency of the global major allele in each population.}\label{fig:figure2}
+\caption[Example map from the Geography of Genetic Variants web application]{Example map from the Geography of Genetic Variants web application. Each pie chart represents a population with the blue slice of the pie displaying the frequency of the global minor allele and the yellow slice of the pie displaying the frequency of the global major allele in each population.}\label{fig:figure2}
 \end{figure}
 \end{CodeChunk}
 
@@ -260,7 +261,7 @@ more transparent, and hence less visible on the map {[}Figure 3{]}.
 
 }
 
-\caption[Figure caption]{Figure caption}\label{fig:figure3}
+\caption[Example map from the Geography of Genetic Variants web application displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies]{Example map from the Geography of Genetic Variants web application displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies. The transparency is scaled in proportion to the number of observed chromosomes for a particular variant in each population.}\label{fig:figure3}
 \end{figure}
 \end{CodeChunk}
 
@@ -294,7 +295,7 @@ notation, this allows a wide range of frequencies to be displayed{]}.
 
 }
 
-\caption[Figure caption]{Figure caption}\label{fig:figure4}
+\caption[Example map from the Geography of Genetic Variants web application displaying the use of frequency scales for more expressive representations of rare variation on geographic maps]{Example map from the Geography of Genetic Variants web application displaying the use of frequency scales for more expressive representations of rare variation on geographic maps. The blue pie charts convey a give minor allele frequency out of 100 percent, the green out 1 percent, and the red out of .01 percent.}\label{fig:figure4}
 \end{figure}
 \end{CodeChunk}
 
@@ -317,7 +318,7 @@ indicated {[}Figure 5{]}.
 
 }
 
-\caption[Figure caption]{Figure caption}\label{fig:figure5}
+\caption[Example map from the Geography of Genetic Variants web application displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position]{Example map from the Geography of Genetic Variants web application displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position. The left map shows the original population locations while the right shows the application of the force directed.}\label{fig:figure5}
 \end{figure}
 \end{CodeChunk}
 
