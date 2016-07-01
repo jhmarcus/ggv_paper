@@ -45,14 +45,14 @@ Unfortunately, generating geographic allele frequency maps is time-consuming for
 
 Our work is inspired by past tools such as the ALFRED database @rajeevan2011alfred and the maps available on the HGDP Selection browser @pickrell2009signals.  One of us (J.N.) developed the scripts for the HGDP Selection Browser maps using The Generic Mapping Tools (GMT) @wessel2013generic, a powerful system of geographic plotting scripts with a substantial learning curve.  The plots from the HGDP Selection Browser have proved useful, and have appeared in research articles e.g @pickrell2009signals, @coop2009role, books e.g. @dudley2013exploring, and have been ported and made available on the UCSC Genome Browser (available under the HGDP Allele Freq track of the browser).  
 
-Reference datasets for population genetic variation has greatly expanded since the release of the HGDP Illumina 650Y dataset @li2008worldwide that formed the basis of the HGDP Selection Browser maps.  The most notable advance is the publication of the 1000 Genomes phase 3 data @10002015global though additional datasets are coming online @meyer2012high, @lazaridis2014ancient.  
+Reference datasets for population genetic variation has greatly expanded since the release of the HGDP Illumina 650Y dataset @li2008worldwide that formed the basis of the HGDP Selection Browser maps.  The most notable advance is the publication of the 1000 Genomes Phase 3 data @10002015global though additional datasets are coming online @meyer2012high, @lazaridis2014ancient.  
 
 In addition, novel approaches for data visualization have become more widely available.  In particular, web-based visualization tools, such as Data Driven Documents (D3.js), offer powerful approaches to realize these aims through useful methods for interactivity, advantages of software development in modern web-browsers, a large open-source development community, and ease of sharing @bostock2011d3. 
    
 Taking advantage of these recent advances, we aim to address significant visualization challenges that are inherit in the production of geographic allele frequency maps, including dynamic interaction, display of rare genetic variation, and representation of uncertainty in estimated allele frequencies due to variable sample sizes. 
 
 
-```{r figure1, echo=FALSE, message=FALSE, fig.height=4, fig.width=4, fig.align='center', fig.cap='Schematic diagram of the Geography of Genetic Variants (GGV) browser. We compute minor allele frequencies from publicly available population genetic datasets from the 1000 Genomes Project, Human Genome Diversity Project (HGDP) and Population Reference Sample (POPRES). These allele frequencies are stored in a SQL database along side with geographic coordinates associated with each population. The front-end visualization was created using d3 and accesses allele frequency and population meta-data from a REST API implemented in the python library flask.'}
+```{r figure1, echo=FALSE, message=FALSE, fig.height=4, fig.width=4, fig.align='center', fig.cap='Schematic diagram of the Geography of Genetic Variants (GGV) browser. We compute minor allele frequencies from publicly available population genetic datasets from the 1000 Genomes Project, Human Genome Diversity Project (HGDP) and Population Reference Sample (POPRES). These allele frequencies are stored in a SQL database along side with geographic coordinates associated with each population. The front-end visualization was created using D3.js and accesses allele frequency and population meta-data from a REST API implemented in the python library flask.'}
 img <- readPNG("figures/png/figure1.png")
 grid.raster(img)
 ```
@@ -83,7 +83,7 @@ grid.raster(img)
 # Representing rare variants in frequency data {-}
 An additional challenge is that allele frequencies between variants often differ greatly, sometimes by orders of magnitude in a single dataset. This has not been an pervasive problem until recently, as most population genetic samples were based on genotype arrays, biased towards variants that are common in human populations (5-50% in minor allele frequency). With the advent of next generation sequencing technologies and large samples of thousands of individuals, it is common for datasets to contain rare variants @10002015global, @nelson2012abundance, @tennessen2012evolution. 
 
-```{r figure4, echo=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.align='center', fig.cap='Example maps from the Geography of Genetic Variants browser displaying the use of frequency scales for more expressive representations of rare variation on geographic maps. The blue pie charts convey a give minor allele frequency out of 100 percent, the green out 1 percent, and the red out of .01 percent.'}
+```{r figure4, echo=FALSE, message=FALSE, fig.height=5, fig.width=5, fig.align='center', fig.cap='Example maps from the Geography of Genetic Variants browser displaying the use of frequency scales for more expressive representations of rare variation on geographic maps. The blue pie charts convey a give minor allele frequency out of 100 percent, the green out 1 percent, and the red out of .01 percent.'}
 img <- readPNG("figures/png/figure4.png")
 grid.raster(img)
 ```
@@ -93,7 +93,7 @@ In current visualization schemes, such as the HGDP Selection Browser, rare varia
 # Interface features {-}
 In many datasets where populations are sampled densely in geographic space, one problem is that allele frequency plots begin to overlap each other and obscure information. To address this issue, we use force-directed layouts of the populations such that no two points are overlapping each other, and yet the points will be pulled towards their true origins. Lines anchoring the points visibly to their original sampling locations will be used to make sure true sampling locations are indicated [Figure 5].
 
-```{r figure5, echo=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.align='center', fig.cap='Example maps from the Geography of Genetic Variants browser displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position. The left map shows the original population locations while the right shows the application of the force directed layout.'}
+```{r figure5, echo=FALSE, message=FALSE, fig.height=6, fig.width=5, fig.align='center', fig.cap='Example maps from the Geography of Genetic Variants browser displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position. The left map shows the original population locations while the right shows the application of the force directed layout.'}
 img <- readPNG("figures/png/figure5.png")
 grid.raster(img)
 ```
