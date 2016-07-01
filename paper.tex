@@ -100,8 +100,8 @@ populations have been related through time (e.g.~levels of gene flow and
 divergence). For these reasons, visual inspection of geographic maps for
 genetic variants is common practice in genetic studies. Here we develop
 an interactive visualization tool for illuminating the geographic
-distribution of genetic variants. Through an efficient REST API and
-dynamic front-end the
+distribution of genetic variants. Through an efficient SQL database,
+REST API and dynamic front-end the
 \href{popgen.uchicago.edu/ggv}{\textit{Geography of Genetic Variants (GGV)}}
 browser rapidly provides maps of allele frequencies in populations
 distributed across the globe.
@@ -187,14 +187,6 @@ geographic allele frequency maps, including dynamic interaction, display
 of rare genetic variation, and representation of uncertainty in
 estimated allele frequencies due to variable sample sizes.
 
-\section*{Fundamental Approach}\label{fundamental-approach}
-\addcontentsline{toc}{section}{Fundamental Approach}
-
-The Geography of Genetic Variants browser (GGV) uses the SVG and mapping
-utilities of D3.js to generate interactive frequency maps, allowing for
-quick and dynamic displays of the geographic distribution of a genetic
-variant.
-
 \begin{CodeChunk}
 \begin{figure}
 
@@ -202,9 +194,17 @@ variant.
 
 }
 
-\caption[Schematic diagram of the Geography of Genetic Variants (GGV) web application]{Schematic diagram of the Geography of Genetic Variants (GGV) web application. We compute minor allele frequencies from publicly available population genetic datasets from the 1000 Genomes Project, Human Genome Diversity Project (HGDP) and Population Reference Sample (POPRES). These allele frequencies are stored in a SQL database along side with geographic coordinates associated with each population. The front-end visualization was created using d3 and accesses allele frequency and population meta-data from a REST API implemented in the python library flask.}\label{fig:figure1}
+\caption[Schematic diagram of the Geography of Genetic Variants (GGV) browser]{Schematic diagram of the Geography of Genetic Variants (GGV) browser. We compute minor allele frequencies from publicly available population genetic datasets from the 1000 Genomes Project, Human Genome Diversity Project (HGDP) and Population Reference Sample (POPRES). These allele frequencies are stored in a SQL database along side with geographic coordinates associated with each population. The front-end visualization was created using d3 and accesses allele frequency and population meta-data from a REST API implemented in the python library flask.}\label{fig:figure1}
 \end{figure}
 \end{CodeChunk}
+
+\section*{Fundamental Approach}\label{fundamental-approach}
+\addcontentsline{toc}{section}{Fundamental Approach}
+
+The Geography of Genetic Variants browser (GGV) uses the SVG and mapping
+utilities of D3.js to generate interactive frequency maps, allowing for
+quick and dynamic displays of the geographic distribution of a genetic
+variant.
 
 In order to allow for easy access to large commonly used public genomic
 datasets, such as the 1000 Genomes project, Human Genome Diversity
@@ -230,7 +230,7 @@ highly visual way for learners to understand human genetic variation.
 
 }
 
-\caption[Example map from the Geography of Genetic Variants web application]{Example map from the Geography of Genetic Variants web application. Each pie chart represents a population with the blue slice of the pie displaying the frequency of the global minor allele and the yellow slice of the pie displaying the frequency of the global major allele in each population.}\label{fig:figure2}
+\caption[Example map from the Geography of Genetic Variants browser]{Example map from the Geography of Genetic Variants browser. Each pie chart represents a population with the blue slice of the pie displaying the frequency of the global minor allele and the yellow slice of the pie displaying the frequency of the global major allele in each population.}\label{fig:figure2}
 \end{figure}
 \end{CodeChunk}
 
@@ -261,7 +261,7 @@ more transparent, and hence less visible on the map {[}Figure 3{]}.
 
 }
 
-\caption[Example map from the Geography of Genetic Variants web application displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies]{Example map from the Geography of Genetic Variants web application displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies. The transparency is scaled in proportion to the number of observed chromosomes in each population for a particular variant.}\label{fig:figure3}
+\caption[Example map from the Geography of Genetic Variants browser displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies]{Example map from the Geography of Genetic Variants browser displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies. The transparency is scaled in proportion to the number of observed chromosomes in each population for a particular variant.}\label{fig:figure3}
 \end{figure}
 \end{CodeChunk}
 
@@ -279,6 +279,17 @@ frequency). With the advent of next generation sequencing technologies
 and large samples of thousands of individuals, it is common for datasets
 to contain rare variants {[}17{]}, {[}4{]}, {[}22{]}.
 
+\begin{CodeChunk}
+\begin{figure}
+
+{\centering \includegraphics{paper_files/figure-latex/figure4-1} 
+
+}
+
+\caption[Example maps from the Geography of Genetic Variants browser displaying the use of frequency scales for more expressive representations of rare variation on geographic maps]{Example maps from the Geography of Genetic Variants browser displaying the use of frequency scales for more expressive representations of rare variation on geographic maps. The blue pie charts convey a give minor allele frequency out of 100 percent, the green out 1 percent, and the red out of .01 percent.}\label{fig:figure4}
+\end{figure}
+\end{CodeChunk}
+
 In current visualization schemes, such as the HGDP Selection Browser,
 rare variants would be represented as narrow slivers in a pie chart,
 nearly invisible to the naked eye. To address this challenge we re-scale
@@ -287,17 +298,6 @@ Specifically, we will use a ``frequency scale'' that is indicated below
 the map, and redundantly using color, that will indicate a constant
 scale for the frequencies displayed {[}Figure 4{]}. Much like scientific
 notation, this allows a wide range of frequencies to be displayed{]}.
-
-\begin{CodeChunk}
-\begin{figure}
-
-{\centering \includegraphics{paper_files/figure-latex/figure4-1} 
-
-}
-
-\caption[Example map from the Geography of Genetic Variants web application displaying the use of frequency scales for more expressive representations of rare variation on geographic maps]{Example map from the Geography of Genetic Variants web application displaying the use of frequency scales for more expressive representations of rare variation on geographic maps. The blue pie charts convey a give minor allele frequency out of 100 percent, the green out 1 percent, and the red out of .01 percent.}\label{fig:figure4}
-\end{figure}
-\end{CodeChunk}
 
 \section*{Interface features}\label{interface-features}
 \addcontentsline{toc}{section}{Interface features}
@@ -318,7 +318,7 @@ indicated {[}Figure 5{]}.
 
 }
 
-\caption[Example map from the Geography of Genetic Variants web application displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position]{Example map from the Geography of Genetic Variants web application displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position. The left map shows the original population locations while the right shows the application of the force directed.}\label{fig:figure5}
+\caption[Example maps from the Geography of Genetic Variants browser displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position]{Example maps from the Geography of Genetic Variants browser displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position. The left map shows the original population locations while the right shows the application of the force directed layout.}\label{fig:figure5}
 \end{figure}
 \end{CodeChunk}
 
