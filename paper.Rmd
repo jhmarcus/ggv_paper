@@ -70,7 +70,7 @@ After a query, the GGV displays the frequency of a variant in a given population
 # Representing variable certainty in frequency data {-}
 One under-appreciated problem with allele frequency maps is that not all data points have equal levels of certainty. For some locations, sample sizes are small, and the reported allele frequency may be quite far from the true population frequency due to sampling error. To address this issue, we use varying transparency in a population's pie chart: sample allele frequencies with higher levels of sampling error will be made more transparent, and hence less visible on the map [Figure 3].   
 
-```{r figure3, echo=FALSE, message=FALSE, fig.height=6, fig.width=6, fig.align='center', fig.cap='Example map from the Geography of Genetic Variants web application displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies. The transparency is scaled in proportion to the number of observed chromosomes for a particular variant in each population.'}
+```{r figure3, echo=FALSE, message=FALSE, fig.height=6, fig.width=6, fig.align='center', fig.cap='Example map from the Geography of Genetic Variants web application displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies. The transparency is scaled in proportion to the number of observed chromosomes in each population for a particular variant.'}
 img <- readPNG("figures/png/figure3.png")
 grid.raster(img)
 ```
