@@ -1,18 +1,6 @@
 ## Getting Started
 
-To get `Rmd` template from `https://github.com/sjmgarnier/RmdTemplates`
-
-```
-library(devtools)
-devtools::install_github("sjmgarnier/RmdTemplates")
-```
-
-Install inkscape to covert svg to png
-
-```
-brew tap homebrew/gui
-brew install inkscape
-```
+Note: use rstudio to compile the .tex file
 
 ## TODO
 

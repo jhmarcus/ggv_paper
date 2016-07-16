@@ -1,23 +1,24 @@
-paper.pdf: paper.Rmd figures/png/figure1.png figures/png/figure2.png figures/png/figure3.png figures/png/figure4.png figures/png/figure5.png
-	R -e "rmarkdown::render('paper.Rmd')"
-	open paper.pdf
 
-figures/png/figure2.png: figures/svg/figure2.svg
-	inkscape -z -f figures/svg/figure2.svg -e figures/png/figure2.png
+figures/pdf/figure2.pdf: figures/svg/figure2.svg
+	rsvg-convert -f pdf -o figures/pdf/figure2.pdf figures/svg/figure2.svg
 
-figures/png/figure3.png: figures/svg/figure3.svg
-	inkscape -z -f figures/svg/figure3.svg -e figures/png/figure3.png
+figures/pdf/figure3.pdf: figures/svg/figure3.svg
+	rsvg-convert -f pdf -o figures/pdf/figure3.pdf figures/svg/figure3.svg
 
-figures/png/figure4.png: figures/svg/figure4.svg
-	inkscape -z -f figures/svg/figure4.svg -e figures/png/figure4.png
+figures/pdf/figure4.pdf: figures/svg/figure4.svg
+	rsvg-convert -f pdf -o figures/pdf/figure4.pdf figures/svg/figure4.svg
 
-figures/png/figure5.png: figures/svg/figure5.svg
-	inkscape -z -f figures/svg/figure5.svg -e figures/png/figure5.png
+figures/pdf/figure5.pdf: figures/svg/figure5.svg
+	rsvg-convert -f pdf -o figures/pdf/figure5.pdf figures/svg/figure5.svg
+
+figure/pdf/pie_blue.pdf: figures/svg/pie_blue.svg
+	rsvg-convert -f pdf -o figures/pdf/pie_blue.pdf figures/svg/pie_blue.svg
+
+figure/pdf/pie_green.pdf: figures/svg/pie_green.svg
+	rsvg-convert -f pdf -o figures/pdf/pie_green.pdf figures/svg/pie_green.svg
+
+figure/pdf/pie_red.pdf: figures/svg/pie_red.svg
+	rsvg-convert -f pdf -o figures/pdf/pie_red.pdf figures/svg/pie_red.svg
 
 clean:
-	rm paper.tex
-	rm paper.pdf
-
-open:
-	open paper.pdf
-
+	rm -fv *.pdf *.aux *.log *.bbl *.blg *.toc *.out *.lot *.lof *.gz
