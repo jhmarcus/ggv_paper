@@ -9,6 +9,7 @@
 \usepackage{authblk}
 \usepackage{array}
 \usepackage[labelfont=bf]{caption}
+\usepackage[hang,flushmargin]{footmisc} 
 \makeatletter
 \renewcommand*{\@fnsymbol}[1]{\ensuremath{\ifcase#1\or *\or**\or\dagger\or \ddagger\or
    \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
@@ -49,7 +50,7 @@ Reference datasets for population genetic variation have greatly expanded since 
 \begin{figure}[h]
  \centering
  \includegraphics[width=.4\textwidth]{figures/pdf/figure1.pdf}
- \caption{Schematic diagram of the Geography of Genetic Variants (GGV) browser. We compute minor allele frequencies from publicly available population genetic datasets from the 1000 Genomes Project, Human Genome Diversity Project (HGDP) and Population Reference Sample (POPRES). These allele frequencies are stored in a SQL database along side with geographic coordinates associated with each population. The front-end visualization was created using D3.js and accesses allele frequency and population meta-data from a REST API implemented using the python library flask.}
+ \caption{Schematic diagram of the Geography of Genetic Variants (GGV) browser. We compute minor allele frequencies from publicly available population genetic datasets from the 1000 Genomes Project, Human Genome Diversity Project (HGDP) and Population Reference Sample (POPRES). These allele frequencies are stored in a SQL database along side with geographic coordinates associated with each population. The front-end visualization was created using D3.js and accesses allele frequency and population meta-data from a REST API implemented using the python library flask. }
 \end{figure}
 
 Taking advantage of these recent advances, we aim to address the significant visualization challenges that are inherit in the production of geographic allele frequency maps, including dynamic interaction, display of rare genetic variation, and representation of uncertainty in estimated allele frequencies due to variable sample sizes.
@@ -60,7 +61,7 @@ Taking advantage of these recent advances, we aim to address the significant vis
 
 The Geography of Genetic Variants browser (GGV) uses the scalable vector graphics and mapping utilities of D3.js \citep{bostock2011d3} to generate interactive frequency maps, allowing for quick and dynamic displays of the geographic distribution of a genetic variant.  The front-end provides legends for the map and various configuration boxes to allow users to query different datasets or choose visualization options.
 
-In order to allow for easy access to large commonly used public genomic datasets, such as the 1000 Genomes project \citep{10002015global}, Human Genome Diversity project \citep{li2008worldwide}, we have developed an SQL database and REST API \citep{grinberg2014flask} for querying allele frequencies by chromosome and position, by reference SNP identifier \citep{sherry2001dbsnp}, or randomly sampled SNPs [Figure 1].  While many applications require inspection of the distribution of a specific variant, from our experience, it can be very helpful to quickly view the geographic distribution of several randomly chosen variants to quickly gain a sense of structure in a dataset. For instance, in data with deep population subdivision, it is obvious in the consistent patterns of differentiation observed across markers. We also expect this will be useful in teaching contexts – as it provides a highly visual way for learners to understand human genetic variation.
+In order to allow for easy access to large commonly used public genomic datasets, such as the 1000 Genomes project \citep{10002015global}, Human Genome Diversity project \citep{li2008worldwide}, we have developed an SQL database and REST API \citep{grinberg2014flask} for querying allele frequencies by chromosome and position, by reference SNP identifier \citep{sherry2001dbsnp}, or randomly sampled SNPs [Figure 1]\footnote{Database icon made by http://www.flaticon.com/authors/madebyoliver from www.flaticon.com and monitor icon made by http://www.flaticon.com/authors/gregor-cresnar from www.flaticon.com}.  While many applications require inspection of the distribution of a specific variant, from our experience, it can be very helpful to quickly view the geographic distribution of several randomly chosen variants to quickly gain a sense of structure in a dataset. For instance, in data with deep population subdivision, it is obvious in the consistent patterns of differentiation observed across markers. We also expect this will be useful in teaching contexts – as it provides a highly visual way for learners to understand human genetic variation.
 
 \begin{figure}[h]
  \centering
