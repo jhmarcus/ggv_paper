@@ -1,7 +1,9 @@
-Sample.pdf: main.tex 
-	pdflatex main.tex
-	bibtex document
-	pdflatex main.tex
-	pdflatex main.tex
-	open Sample.pdf
+main.pdf: main.tex main.bib
+	pdflatex main 
+	bibtex main
+	pdflatex main
+	pdflatex main
+	open main.pdf
 
+clean:
+	rm -fv *.aux *.log *.bbl *.blg *.toc *.out *.lot *.lof *.gz
