@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath,amssymb}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{lineno}
+\usepackage{authblk}
+\usepackage{array}
+\usepackage[labelfont=bf]{caption}
+\usepackage[hang,flushmargin]{footmisc}
+\makeatletter
+\renewcommand*{\@fnsymbol}[1]{\ensuremath{\ifcase#1\or *\or**\or\dagger\or \ddagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi}}
+\makeatother
+
+\captionsetup{labelfont=bf}
+\frenchspacing
+\title{\textbf{Supplementary Information}\\Visualizing the Geography of Genetic Variants}
+\author[1]{Joseph H. Marcus$^{*}$}
+\author[1,2]{John Novembre\thanks{Address correspondence to JHM (\texttt{jhmarcus@uchicago.edu}) or JN (\texttt{jnovembre@uchicago.edu}).}}
+\affil[1]{\small{Department of Human Genetics, University of Chicago, Chicago, IL,USA}}
+\affil[2]{\small{Department of Ecology and Evolutionary Biology, University of Chicago, Chicago, IL,USA}}
+
+
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Caveats and Future Directions}
+
+A major challenge of using a geographic representation of genetic variation in humans is that the samples must be associated with a geographic location.  While doing so is generally immensely helpful, it has inherent complexity and limitations.  For example,  practitioners must make choices regarding representing where an individual was sampled for the study (e.g. the city of a major research center) or choosing a location that is more representative of an individual's ancestral origins (e.g. based on the birthplaces of recent ancestors, such as grandparents).  We do not proscribe a general solution to this problem, and for the current defaults we use locations based on the approach taken in the source publications.  A future feature will allow alternative location schemas to be used for the populations in a dataset.
+
+We also envision a variety of future extensions to the GGV that would allow for further dissection of geographic structure in large-scale population genomic datasets. Providing an interactive means of browsing neighboring variant sites near a SNP of interest would offer a unique view into patterns of linkage disequilibrium around that focal SNP. This feature would be relevant to both medical geneticists conducting genome-wide association studies with interests in fine mapping as well as population geneticists interested in scanning the genome to detect signatures of positive selection. We imagine that incorporating a chromosomal browser such as jbrowse \citep{skinner2009jbrowse} within the GGV would be greatly utilized by researchers and educators alike.
+
+\clearpage
+
+\section*{Figures and Tables}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[width=.85\textwidth]{supp_figures/figure1.pdf}
+ \caption{Example maps from the Geography of Genetic Variants browser displaying the use of frequency scales for more expressive representations of rare variation on geographic maps. The blue pie charts convey a given minor allele frequency out of 100 percent, the green out of 1 percent, and the red out of 0.01 percent. The data are from \citet{10002015global}.}
+\label{fig:freq}
+\end{figure}
+
+  \begin{table}[h!]
+    \begin{center}
+    \begin{tabular}
+        {lllll} \hline  \textbf{Sample Frequency}& \textbf{Display Frequency Scale} & \textbf{Displayed Image} \\
+        \hline 0.25 & 1 & \parbox[c]{1em}{\includegraphics[width=.3in]{./figures/pdf/pie_blue.pdf}} \\
+        0.025 &  0.1 & \parbox[c]{1em}{\includegraphics[width=.3in]{./figures/pdf/pie_green.pdf}} \\
+        0.0025 &  0.01 & \parbox[c]{1em}{\includegraphics[width=.3in]{./figures/pdf/pie_red.pdf}} \\
+        0.00025 &  0.001 & \parbox[c]{1em}{\includegraphics[width=.3in]{./figures/pdf/pie_purple.pdf}}
+    \end{tabular}
+  \caption{Rare variants present a challenge for display.  To address this challenge, the GGV browser changes the displayed image and the frequency scale of the map depending on the input sample frequency.  As an example, a variant with a frequency 0.0025 is shown as a pie-chart that is 25\% full and a frequency scale of 0.01 is marked in the legend of the map.}
+  \label{tab:rare}
+\end{center}
+\end{table}
+
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=.8\textwidth]{supp_figures/figure2.pdf}
+   \caption{Example map from the Geography of Genetic Variants browser displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies. The transparency is scaled in proportion to the number of observed chromosomes in each population for a particular variant.  The frequency data and population identifiers are from \citet{novembre2008genes}.}
+  \label{fig:uncertainty}
+\end{figure}
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=\textwidth]{supp_figures/figure3.pdf}
+ \caption{Example maps from the Geography of Genetic Variants browser displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position. The left map shows the original population locations while the right shows the application of the force directed layout.}
+\end{figure}
+
+\clearpage
+
+\section*{Appendix}
+\subsubsection*{Example 1: Query by rsid}
+
+\begin{verbatim}
+http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&rsID=rs1834640
+[
+  {
+    "alleles": ["A", "G"],
+    "pos": ["-15.310139", "13.443182"],
+    "pop": "GWD",
+    "nobs": "226",
+    "xobs": "17",
+    "freqscale": 1,
+    "freq": [0.0752212389381, 0.9247787610619],
+    "chrom_pos": "15:48392165",
+    "rawfreq": 0.0752212389381
+  }, ...
+]
+\end{verbatim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Example 2: Query by chromosome position}
+
+\begin{verbatim}
+http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&chr=14&pos=37690093
+[
+  {
+    "alleles": ["G", "A"],
+    "pos": ["-15.310139", "13.443182"],
+    "pop": "GWD",
+    "nobs": "226",
+    "xobs": "0",
+    "freqscale": 0.01,
+    "freq": [0.0, 1.0],
+    "chrom_pos": "14:37690093",
+    "rawfreq": 0.0
+  }, ...
+]
+\end{verbatim}
+
+\subsubsection*{Example 3: Random query}
+
+\begin{verbatim}
+http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&random_snp=True
+[
+  {
+    "alleles": ["T", "C"],
+    "pos": ["-15.310139", "13.443182"],
+    "pop": "GWD",
+    "nobs": "226",
+    "xobs": "0",
+    "freqscale": 0.01,
+    "freq": [0.0, 1.0],
+    "chrom_pos": "5:42452893",
+    "rawfreq": 0.0
+  }, ...
+]
+\end{verbatim}
+
+\end{document}

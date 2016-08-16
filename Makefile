@@ -1,9 +1,14 @@
-paper.pdf: paper.tex paper.bib figures/pdf/figure1.pdf figures/png/figure2.png figures/pdf/figure3.pdf figures/pdf/figure4.pdf figures/pdf/figure5.pdf	
-	pdflatex paper.tex
-	bibtex paper
-	pdflatex paper.tex
-	pdflatex paper.tex
-	open paper.pdf
+supplement.pdf: supplement.tex
+	pdflatex supplement
+	pdflatex supplement
+	pdflatex supplement
+
+#paper.pdf: paper.tex paper.bib figures/pdf/figure1.pdf figures/png/figure2.png figures/pdf/figure3.pdf figures/pdf/figure4.pdf figures/pdf/figure5.pdf	
+#	pdflatex paper.tex
+#	bibtex paper
+#	pdflatex paper.tex
+#	pdflatex paper.tex
+#	open paper.pdf
 
 figures/pdf/figure2.pdf: figures/svg/figure2.svg
 	rsvg-convert -f pdf -o figures/pdf/figure2.pdf figures/svg/figure2.svg

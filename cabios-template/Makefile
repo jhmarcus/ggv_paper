@@ -3,7 +3,11 @@ main.pdf: main.tex main.bib
 	bibtex main
 	pdflatex main
 	pdflatex main
-	open main.pdf
+
+supplement.pdf: supplement.tex
+	pdflatex supplement
+	pdflatex supplement
+	pdflatex supplement
 
 clean:
 	rm -fv *.aux *.log *.bbl *.blg *.toc *.out *.lot *.lof *.gz
