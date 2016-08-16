@@ -16,6 +16,10 @@
    \or \ddagger\ddagger \else\@ctrerr\fi}}
 \makeatother
 
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{figure}}
+
+
 \captionsetup{labelfont=bf}
 \frenchspacing
 \title{\textbf{Supplementary Information}\\Visualizing the Geography of Genetic Variants}
@@ -29,7 +33,7 @@
 \begin{document}
 \maketitle
 
-\section*{Caveats and Future Directions}
+\section*{Expanded discussion}
 
 A major challenge of using a geographic representation of genetic variation in humans is that the samples must be associated with a geographic location.  While doing so is generally immensely helpful, it has inherent complexity and limitations.  For example,  practitioners must make choices regarding representing where an individual was sampled for the study (e.g. the city of a major research center) or choosing a location that is more representative of an individual's ancestral origins (e.g. based on the birthplaces of recent ancestors, such as grandparents).  We do not proscribe a general solution to this problem, and for the current defaults we use locations based on the approach taken in the source publications.  A future feature will allow alternative location schemas to be used for the populations in a dataset.
 
