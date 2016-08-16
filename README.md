@@ -1,7 +1,4 @@
-## Getting Started
+# Visualizing the Geography of Genetic Variants
 
-Note: use rstudio to compile the .tex file
-
-*the make file seems to be working ok now*
-
-note `cabios-template/` is the bioinformatics template 
+main text in `cabios-template/main.tex`   
+supplement in `supplement/supplement.tex` 

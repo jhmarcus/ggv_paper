@@ -41,7 +41,7 @@ We also envision a variety of future extensions to the GGV that would allow for 
 
 \begin{figure}[ht]
  \centering
- \includegraphics[width=.85\textwidth]{supp_figures/figure1.pdf}
+ \includegraphics[width=.85\textwidth]{figures/figure1.pdf}
  \caption{Example maps from the Geography of Genetic Variants browser displaying the use of frequency scales for more expressive representations of rare variation on geographic maps. The blue pie charts convey a given minor allele frequency out of 100 percent, the green out of 1 percent, and the red out of 0.01 percent. The data are from \citet{10002015global}.}
 \label{fig:freq}
 \end{figure}
@@ -50,10 +50,10 @@ We also envision a variety of future extensions to the GGV that would allow for 
     \begin{center}
     \begin{tabular}
         {lllll} \hline  \textbf{Sample Frequency}& \textbf{Display Frequency Scale} & \textbf{Displayed Image} \\
-        \hline 0.25 & 1 & \parbox[c]{1em}{\includegraphics[width=.3in]{./figures/pdf/pie_blue.pdf}} \\
-        0.025 &  0.1 & \parbox[c]{1em}{\includegraphics[width=.3in]{./figures/pdf/pie_green.pdf}} \\
-        0.0025 &  0.01 & \parbox[c]{1em}{\includegraphics[width=.3in]{./figures/pdf/pie_red.pdf}} \\
-        0.00025 &  0.001 & \parbox[c]{1em}{\includegraphics[width=.3in]{./figures/pdf/pie_purple.pdf}}
+        \hline 0.25 & 1 & \parbox[c]{1em}{\includegraphics[width=.3in]{figures/pie_blue.pdf}} \\
+        0.025 &  0.1 & \parbox[c]{1em}{\includegraphics[width=.3in]{figures/pie_green.pdf}} \\
+        0.0025 &  0.01 & \parbox[c]{1em}{\includegraphics[width=.3in]{figures/pie_red.pdf}} \\
+        0.00025 &  0.001 & \parbox[c]{1em}{\includegraphics[width=.3in]{figures/pie_purple.pdf}}
     \end{tabular}
   \caption{Rare variants present a challenge for display.  To address this challenge, the GGV browser changes the displayed image and the frequency scale of the map depending on the input sample frequency.  As an example, a variant with a frequency 0.0025 is shown as a pie-chart that is 25\% full and a frequency scale of 0.01 is marked in the legend of the map.}
   \label{tab:rare}
@@ -63,14 +63,14 @@ We also envision a variety of future extensions to the GGV that would allow for 
 
 \begin{figure}[h]
    \centering
-   \includegraphics[width=.8\textwidth]{supp_figures/figure2.pdf}
+   \includegraphics[width=.8\textwidth]{figures/figure2.pdf}
    \caption{Example map from the Geography of Genetic Variants browser displaying the use of varying transparency of population pie charts to represent uncertainty in allele frequencies. The transparency is scaled in proportion to the number of observed chromosomes in each population for a particular variant.  The frequency data and population identifiers are from \citet{novembre2008genes}.}
   \label{fig:uncertainty}
 \end{figure}
 
 \begin{figure}[h]
  \centering
- \includegraphics[width=\textwidth]{supp_figures/figure3.pdf}
+ \includegraphics[width=\textwidth]{figures/figure3.pdf}
  \caption{Example maps from the Geography of Genetic Variants browser displaying the use of a force directed layout to limit visual clutter when many populations overlap in geographic position. The left map shows the original population locations while the right shows the application of the force directed layout.}
 \end{figure}
 
@@ -135,5 +135,8 @@ http://popgen.uchicago.edu/ggv_api/freq_table?data="1000genomes_phase3_table"&ra
   }, ...
 ]
 \end{verbatim}
+
+\bibliographystyle{natbib}
+\bibliography{supplement}
 
 \end{document}

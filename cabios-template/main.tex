@@ -61,7 +61,7 @@ After a query, the GGV displays the allele frequencies for a set of populations 
 
 \textbf{Overlapping populations:} In many datasets where populations are sampled densely in geographic space, one problem is that allele frequency plots begin to overlap each other and obscure information. To address this issue, we use force-directed layouts of the populations such that no two points are overlapping each other, and yet the points will be pulled towards their true origins [Figure \ref{fig:screenshot}, Supplementary Figure 3].  Also, by hovering the mouse cursor over any population, a user can see the population labels and precise frequency information.
 
-\textbf{REST API:} To provide an interface to the population minor allele frequency data, we use a REST API implemented in the python library Flask-RESTful \citep{grinberg2014flask}. The front-end D3.js visualization uses the API to obtain the data, though users can also interface with it directly. Genetic variants can be queried by chromosome position, rsid, or randomly (see supplementary data for examples).
+\textbf{REST API:} To provide an interface to the population minor allele frequency data, we use a REST API implemented in the python library Flask-RESTful \citep{grinberg2014flask}. The front-end D3.js visualization uses the API to obtain the data, though users can also interface with it directly. Genetic variants can be queried by chromosome position, rsid, or randomly (see supplementary appendix for examples).
 
 \section{Conclusion}
 
